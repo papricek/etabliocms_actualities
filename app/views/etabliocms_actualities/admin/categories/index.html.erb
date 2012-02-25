@@ -1,0 +1,25 @@
+<% set_title_and_breadcrumb t('category.categories') %>
+
+<h1><%= t('category.categories') %></h1>
+
+<div class="strap">
+  <%= link_to "#{t('category.add')} &raquo;".html_safe, new_admin_category_path, :class => 'text-icon icon-add' %>
+  <%= link_to "#{t('admin.refresh')} &raquo;".html_safe, admin_categories_path, :class => 'text-icon icon-refresh' %>
+  <%= link_to "#{t('admin.back_to_admin')} &raquo;".html_safe, admin_path, :class => 'text-icon icon-backward' %>
+</div>
+
+<table class="admin-table hierarchical-table">
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.category.title') %></th>
+      <th><%= t('admin.created_at') %></th>
+      <th><%= t('activerecord.attributes.category.locale') %></th>
+      <th><%= t('admin.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <%= render_table_tree(EtabliocmsActualities::Category.order("lft asc")) %>
+
+  </tbody>
+</table>

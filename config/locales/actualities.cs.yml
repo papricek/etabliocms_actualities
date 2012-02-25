@@ -1,0 +1,24 @@
+cs:
+  category:
+    categories: Kategorie
+    categories_count: "Kategorie (%{count})"
+    add: Přidat kategorii
+    created: Kategorie byla úspěšně vytvořena.
+    updated: Kategorie byla úspěšně upravena.
+    destroyed: Kategorie byla úspěšně odstraněna.
+    moved: Kategorie byla úspěšně přesunuta.
+    not_moved: Kategorie nebyla přesunuta.
+    destroy_confirmation: Skutečně chcete smazat tuto kategorii?
+    admin_legend: Základní údaje o kategorii
+    edit: "Editace kategorie %{title}"
+    new: Nová kategorie
+  activerecord:
+    attributes:
+      "etabliocms_actualities/category":
+        title: Nadpis
+        child_of: Rodič
+        text: Text
+        visible: Viditelné
+        locale: Jazyk
+        page_title: Meta title
+        page_description: Meta description

@@ -1,0 +1,5 @@
+<h3><%= image_tag asset_path("admin/sidebar-categories.png"), :alt => t('category.categories') %><%= t('category.categories') %></h3>
+<ul>
+  <li><%= link_to_unless_current I18n.t('category.categories_count', :count => EtabliocmsActualities::Category.count), admin_categories_path %></li>
+  <li><%= link_to_unless_current t('category.add'), new_admin_category_path %></li>
+</ul>
