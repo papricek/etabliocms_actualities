@@ -1,0 +1,39 @@
+<% set_title_and_breadcrumb t('actuality.actualities') %>
+
+<h1><%= t('actuality.actualities') %></h1>
+
+<div class="strap">
+  <%= link_to "#{t('actuality.add')} &raquo;".html_safe, new_admin_actuality_path, :class => 'text-icon icon-add' %>
+  <%= link_to "#{t('admin.refresh')} &raquo;".html_safe, admin_actualities_path, :class => 'text-icon icon-refresh' %>
+  <%= link_to "#{t('admin.back_to_admin')} &raquo;".html_safe, admin_path, :class => 'text-icon icon-backward' %>
+</div>
+
+<table class="admin-table">
+  <thead>
+  <tr>
+    <th><%= t('activerecord.attributes.etabliocms_actualities/actuality.title') %> </th>
+    <th><%= t('activerecord.attributes.etabliocms_actualities/actuality.publish_date') %></th>
+    <th><%= t('activerecord.attributes.etabliocms_actualities/actuality.unpublish_date') %></th>
+    <th><%= t('admin.actions') %></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% for item in @actualities %>
+      <tr class="<%= cycle("odd-row", "even-row") -%>">
+        <td><%= link_to item.title, edit_admin_actuality_url(item.id) %></td>
+        <td class="center"><%= l item.publish_date, :format => :short %></td>
+        <td class="center"><%= l item.unpublish_date, :format => :short %></td>
+        <td>
+          <%= link_to t('admin.edit'), edit_admin_actuality_url(item.id), :class => 'icon icon-edit', :title => t('admin.edit') %>
+          <%= link_to t('admin.destroy'), admin_actuality_url(item.id),
+                      :method => :delete,
+                      :confirm => t('actuality.destroy_confirmation'),
+                      :class => 'icon icon-destroy',
+                      :title => t('admin.destroy') %>
+        </td>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @actualities %>

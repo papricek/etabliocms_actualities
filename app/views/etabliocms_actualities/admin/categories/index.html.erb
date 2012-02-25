@@ -10,16 +10,16 @@
 
 <table class="admin-table hierarchical-table">
   <thead>
-    <tr>
-      <th><%= t('activerecord.attributes.category.title') %></th>
-      <th><%= t('admin.created_at') %></th>
-      <th><%= t('activerecord.attributes.category.locale') %></th>
-      <th><%= t('admin.actions') %></th>
-    </tr>
+  <tr>
+    <th><%= t('activerecord.attributes.etabliocms_actualities/category.title') %></th>
+    <th><%= t('admin.created_at') %></th>
+    <th><%= t('activerecord.attributes.etabliocms_actualities/category.locale') %></th>
+    <th><%= t('admin.actions') %></th>
+  </tr>
   </thead>
   <tbody>
 
-    <%= render_table_tree(EtabliocmsActualities::Category.order("lft asc")) %>
+  <%= render_table_tree(EtabliocmsActualities::Category.order("lft asc")) %>
 
   </tbody>
 </table>

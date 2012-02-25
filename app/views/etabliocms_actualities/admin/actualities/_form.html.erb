@@ -1,0 +1,45 @@
+<fieldset>
+  <legend><%= t('actuality.admin_legend') %></legend>
+
+  <%= render "layouts/errors", :target => @actuality %>
+
+  <p>
+    <%= f.label :title, :id => "actuality_title_label" %>
+    <%= f.text_field :title, :class => 'text-field' %>
+  </p>
+
+  <p>
+    <%= f.label :perex, :id => "actuality_perex_label" %>
+    <%= f.textile_text_area :perex, :class => "small-text-area" %>
+  </p>
+
+  <p>
+    <%= f.label :text, :id => "actuality_text_label" %>
+    <%= f.textile_text_area :text %>
+  </p>
+
+  <p>
+    <%= f.label :publish_date, :id => "actuality_publish_date_label" %>
+    <%= f.datetime_select :publish_date %>
+  </p>
+
+  <p>
+    <%= f.label :unpublish_date, :id => "actuality_unpublish_date_label" %>
+    <%= f.datetime_select :unpublish_date, :default => Time.now + 5.years %>
+  </p>
+
+  <p>
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, EtabliocmsActualities::Category.all, :id, :title, {:include_blank => true} %>
+  </p>
+
+  <p>
+    <%= f.label :locale, :id => "category_locale_label" %>
+    <%= f.select :locale, I18n.available_locales.map(&:to_s).sort.map { |locale| [I18n.t("admin.locales.#{locale}"), locale.to_s] } %>
+  </p>
+
+  <p>
+    <%= submit_tag t('admin.save'), :class => 'submit' %>
+  </p>
+
+</fieldset>

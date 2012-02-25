@@ -1,4 +1,17 @@
 cs:
+  actuality:
+    actualities: Novinky
+    actualities_count: "Novinky (%{count})"
+    add: Přidat novinku
+    created: Novinka byla úspěšně vytvořena.
+    updated: Novinka byla úspěšně upravena.
+    destroyed: Novinka byla úspěšně odstraněna.
+    moved: Novinka byla úspěšně přesunuta.
+    not_moved: Novinka nebyla přesunuta.
+    destroy_confirmation: Skutečně chcete smazat tuto novinku?
+    admin_legend: Základní údaje o novince
+    edit: "Editace novinky %{title}"
+    new: Nová novinka
   category:
     categories: Kategorie
     categories_count: "Kategorie (%{count})"
@@ -20,5 +33,11 @@ cs:
         text: Text
         visible: Viditelné
         locale: Jazyk
-        page_title: Meta title
-        page_description: Meta description
+      "etabliocms_actualities/actuality":
+        title: Nadpis
+        perex: Perex
+        text: Text
+        category_id: Kategorie
+        publish_date: Publikovat
+        unpublish_date: Stáhnout
+        locale: Jazyk
