@@ -17,9 +17,14 @@ feature 'Categories', '' do
     fill_in 'Nadpis', :with => 'A title with české znaky ěščřžýáíé'
     click_button('Uložit')
     page.should have_content('Kategorie byla úspěšně vytvořena.')
-    page = EtabliocmsActualities::Category.last
-    page.title.should == 'A title with české znaky ěščřžýáíé'
-    page.slug.should == 'a-title-with-ceske-znaky-escrzyaie'
+    category = EtabliocmsActualities::Category.last
+    category.title.should == 'A title with české znaky ěščřžýáíé'
+    category.slug.should == 'a-title-with-ceske-znaky-escrzyaie'
+    click_link(category.title)
+    fill_in 'Nadpis', :with => 'Change!'
+    click_button('Uložit')
+    page.should have_content('Kategorie byla úspěšně upravena.')
+    category.reload.title.should == "Change!"
   end
 
   scenario 'Moving categories in hierarchy via edit' do
