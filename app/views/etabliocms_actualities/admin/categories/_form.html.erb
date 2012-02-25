@@ -1,7 +1,8 @@
-<fieldset>
-  <legend><%= t('category.admin_legend') %></legend>
+<%= render "layouts/errors", :target => @category %>
 
-  <%= render "layouts/errors", :target => @category %>
+<fieldset>
+
+  <legend><%= t('category.admin_legend') %></legend>
 
   <p>
     <%= f.label :title, :id => "category_title_label" %>
