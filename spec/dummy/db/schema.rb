@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120225130701) do
+ActiveRecord::Schema.define(:version => 20120225154559) do
+
+  create_table "actualities", :force => true do |t|
+    t.string   "slug",           :null => false
+    t.string   "title",          :null => false
+    t.text     "perex"
+    t.text     "text"
+    t.integer  "category_id"
+    t.datetime "publish_date",   :null => false
+    t.datetime "unpublish_date", :null => false
+    t.string   "locale"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "title",      :null => false

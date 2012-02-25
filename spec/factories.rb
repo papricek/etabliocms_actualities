@@ -23,4 +23,14 @@ FactoryGirl.define do
     locale "cs"
   end
 
+  factory :actuality, :class => 'EtabliocmsActualities::Actuality' do
+    title
+    perex { Faker::Lorem.paragraphs.to_s }
+    text { Faker::Lorem.paragraphs.to_s }
+    locale "cs"
+    publish_date { 1.month.ago }
+    unpublish_date { 1.month.from_now }
+    category { FactoryGirl.create(:category) }
+  end
+
 end
