@@ -4,12 +4,13 @@ PATH
     etabliocms_actualities (0.0.1)
       awesome_nested_set (= 2.1.2)
       etabliocms_core
+      kaminari
       rails (~> 3.2.1)
 
 PATH
   remote: /home/fafa/www/etabliocms/etabliocms_core
   specs:
-    etabliocms_core (0.0.1)
+    etabliocms_core (0.0.3)
       RedCloth (= 4.2.9)
       configatron
       devise (~> 2.0.4)

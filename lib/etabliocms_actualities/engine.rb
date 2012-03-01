@@ -1,3 +1,6 @@
+require 'awesome_nested_set'
+require 'kaminari'
+
 module EtabliocmsActualities
 
   class Engine < ::Rails::Engine
