@@ -38,7 +38,7 @@
     <%= f.select :locale, I18n.available_locales.map(&:to_s).sort.map { |locale| [I18n.t("admin.locales.#{locale}"), locale.to_s] } %>
   </p>
 
-  <p>
+  <p class="submit-box">
     <%= submit_tag t('admin.save'), :class => 'submit' %>
   </p>
 
