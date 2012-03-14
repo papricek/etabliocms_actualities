@@ -11,6 +11,7 @@ module EtabliocmsActualities
     validates :locale, :presence => true
 
     has_slug :to_param => "path"
+    has_paper_trail
 
     def path
       self_and_ancestors.map(&:slug).join("/")
